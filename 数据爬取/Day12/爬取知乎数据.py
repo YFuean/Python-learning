@@ -21,7 +21,7 @@ def crawl():
     print("请求URL: ", response.url)
     print("返回的数据：", response.text)
     # 解析返回的数据
-    csvfile = open('./csv', 'w', newline='')
+    csvfile = open('./res/csv', 'w', newline='')
     writer = csv.writer(csvfile, delimiter=',', quoting=csv.QUOTE_ALL)
     keys = {'id', 'name', 'url', 'gender', 'avatar_url', 'follower_count'}
     writer.writerow(keys)
