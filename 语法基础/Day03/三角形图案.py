@@ -8,7 +8,6 @@ for i in range(row):
     for _ in range(i+1):
         print('*', end='')
     print()
-
 print()
 
 for i in range(row):
@@ -18,7 +17,6 @@ for i in range(row):
         else:
             print('*', end='')
     print()
-
 print()
 
 for i in range(row):
