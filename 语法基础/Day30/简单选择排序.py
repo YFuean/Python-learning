@@ -4,7 +4,8 @@ def select_sort(items, comp=lambda x, y: x < y):
         min_index = i
         for j in range(i+1, len(items)):
             if comp(items[j], items[min_index]):
-                min_index = j
+                if comp(items[j], items[min_index]):
+                    min_index = j
         items[i], items[min_index] = items[min_index], items[i]
     return items
 
