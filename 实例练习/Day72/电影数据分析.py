@@ -61,7 +61,7 @@ plt.figure(figsize=[8, 8])
 plt.boxplot(x=ratings['Rating'], showmeans=True, meanline=True)
 plt.grid()
 plt.savefig('./res/img/movie2.png')
-# plt.show()
+plt.show()
 
 
 # 使用 value_counts 方法统计电影种类的取值数
@@ -101,3 +101,46 @@ grid = (
     .add(bar, grid_opts=opts.GridOpts(pos_left="30%"))
 )
 grid.render(path='./res/html/movie1.html')
+
+# day73
+c = (
+    Pie()
+    .add(
+        "",
+        [list(z) for z in top10],
+        radius=["40%", "55%"],
+        label_opts=opts.LabelOpts(
+            position="outside",
+            formatter="{a|{a}}{abg|}\n{hr|}\n {b|{b}: }{c} {per|{d}%} ",
+            background_color='#eee',
+            border_color="#aaa",
+            border_width=1,
+            border_radius=4,
+            rich={
+                "a": {"color": "#999", "lineHeight": 22, "align": "center"},
+                "abg": {
+                    "backgroundColor": "#e3e3e3",
+                    "width": "100%",
+                    "align": "right",
+                    "height": 22,
+                    "borderRadius": [4, 4, 0, 0],
+                },
+                "hr": {
+                    "borderColor": "#aaa",
+                    "width": "100%",
+                    "borderWidth": 0.5,
+                    "height": 0,
+                },
+                "b": {"fontSize": 16, "lineHeight": 33},
+                "per": {
+                    "color": "#eee",
+                    "backgroundColor": "#334455",
+                    "padding": [2, 4],
+                    "borderRadius": 2,
+                }
+            }
+
+        )
+    )
+)
+c.render(path='./res/html/movie2.html')
